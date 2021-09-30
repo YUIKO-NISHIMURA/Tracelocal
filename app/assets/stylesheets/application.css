@@ -13,3 +13,12 @@
  *= require_tree .
  *= require_self
  */
+
+.navbar-brand {
+  margin-left: 10px;
+  font-size: 30px;
+}
+
+nav {
+  font-family: 'Kaushan Script', cursive;
+}

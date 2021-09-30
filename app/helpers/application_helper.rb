@@ -1,3 +1,6 @@
 module ApplicationHelper
-    Pagy::Frontend
+    include SessionsHelper
+    include UsersHelper
+    
+    include Pagy::Frontend
 end

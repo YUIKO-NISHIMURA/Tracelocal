@@ -1,0 +1,41 @@
+<% if @posts.any? %>
+  <div class="row g-2 mb-4">
+    <% @posts.each do |post| %>
+    <div class="col-md-4">
+      <div class="card">
+        <% post.images.each do |image| %>  
+         <%= image_tag image.image_url.url, :size =>'320x160'%> 
+        <% end %>
+        <div class="card-body border-top">
+          <div class="row">
+            <div class="col-sm-4">
+              <img class="rounded me-2 mb-5" src="<%= gravatar_url(post.user, {size: 100} ) %>" alt="">
+            </div>
+            <div class="col-sm-8">
+              <p class="card-text">Name:<%= link_to post.user.name, user_path(post.user), class: "text-decoration-none" %></p>
+              <p class="card-text">Age:<%= (DateTime.now.to_i - post.user.birthday.to_i) / (86400*365) %>
+              </p>
+              <p class="card-text">City:<%= post.user.city %></p>
+            </div>
+          </div>
+          <p class="card-text border-top pt-3">Name of place：<%= link_to post.name, post_path(post), class:"text-muted" %></p>
+          <p class="card-text">Genre：<%= post.genre %></p>
+          <p class="card-text">Comment:<%= post.comment %></p>
+          <% if logged_in? %> 
+            <div class="ms-4">
+              <%= render "favorites/favorite_button", post: post %>
+            </div>
+            
+            <% if current_user == post.user %>
+              <%= link_to "Edit", edit_post_path(post) %>
+              <%= link_to "Delete", post, method: :delete, data: {confirm: "You sure?"} %>
+            <% end %>
+          
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+  <%== pagy_bootstrap_nav(@pagy) %>
+<% end %>

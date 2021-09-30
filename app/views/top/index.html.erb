@@ -1,8 +1,11 @@
-<div id="main" class="container-fluid text-center">
-  <img src="mainimg.jpg" class="img-responsive" alt="参考画像">
-
-  <p>Let's travel like a local</p>
+<div class="card">
+  <img class="card-img" src="/assets/mainimg.jpg" alt="">
+  <div class="card-img-overlay">
+    <p class="text-white">Let's travel like a local</p>
+  </div>
 </div>
-<div class="">
-  <!-- #POSTS -->  
+
+<div>
+  <h1 class="text-center mt-3 pb-3 border-bottom">ALL POSTS</h1>
+  <%= render "posts/index" %>
 </div>
