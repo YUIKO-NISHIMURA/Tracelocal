@@ -4,8 +4,10 @@
     <div class="col-md-4">
       <div class="card">
         <div class="card-img-top text-center">
-          <% post.images.each do |image| %>  
-           <%= image_tag image.image_url.url, :size =>'320x180'%> 
+          <% if post.images.any? %>
+            <% post.images.each do |image| %>  
+              <%= image_tag image.image_url.url, :size =>'320x160' %> 
+            <% end %>
           <% end %>
         </div>
         <div class="card-body border-top">

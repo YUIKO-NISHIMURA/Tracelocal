@@ -2,9 +2,11 @@
   <h2 class="mt-2 text-center">Post</h2>
   <div class="row">
     <div class="card col-sm-5 offset-col-3 mx-auto">
-      <div class="text-center">
-        <% @post.images.each do |image| %>  
-          <%= image_tag image.image_url.url, :size =>'320x160'%> 
+      <div class="card-img-top text-center">
+        <% if @post.images.any? %>
+          <% @post.images.each do |image| %>  
+            <%= image_tag image.image_url.url, :size =>'320x160' %> 
+          <% end %>
         <% end %>
       </div>
       <div class="card-body border-top">

@@ -14,7 +14,6 @@ class PostsController < ApplicationController
     @post.images.build #写真投稿用
   end 
 
-  
   def create
     @post = current_user.posts.build(post_params)
     if @post.save
@@ -26,6 +25,10 @@ class PostsController < ApplicationController
     end
   end
   
+  def edit 
+    
+    
+  end 
   def update
     if @post.update(post_params)
       flash[:success] = "Post success"
@@ -50,7 +53,7 @@ class PostsController < ApplicationController
   
   private
     def post_params
-      params.require(:post).permit(:name, :genre, :comment, images_attributes: [:image_url])
+      params.require(:post).permit(:name, :genre, :comment, :station, images_attributes: [:image_url] )
     end
     
     def correct_user

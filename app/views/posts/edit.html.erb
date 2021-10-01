@@ -19,9 +19,15 @@
       </div>
       <div class="mb-3">
         <%= f.label :station, "Station" %>
-        <%= f.texr_field :station, class: "form-control" %>
+        <%= f.text_field :station, class: "form-control" %>
       </div>
       <div class="mb-3">
+        <% if @post.images.any? %>
+          <% @post.images.each do |image| %>  
+            <%= image_tag image.image_url.url, :size =>'320x160' %> 
+          <% end %>
+        <% end %>
+        
         <%= f.fields_for :images do |i| %>
           <%= i.file_field :image_url %>
         <% end %>

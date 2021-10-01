@@ -6,15 +6,15 @@ class User < ApplicationRecord
   validates :password_digest, presence: true
   validates :email, uniqueness: { case_sensitive: false }
   
-  has_many :posts
+  has_many :posts, dependent: :destroy
   
-  has_many :relationships
-  has_many :followings, through: :relationships, source: :follow
-  has_many :reverses_of_relationship, class_name: "Relationship", foreign_key: "follow_id"
-  has_many :followers, through: :reverses_of_relationship, source: :user
+  has_many :relationships, dependent: :destroy
+  has_many :followings, through: :relationships, source: :follow, dependent: :destroy
+  has_many :reverses_of_relationship, class_name: "Relationship", foreign_key: "follow_id", dependent: :destroy
+  has_many :followers, through: :reverses_of_relationship, source: :user, dependent: :destroy
   
-  has_many :favorites
-  has_many :like_posts, through: :favorites, source: :post
+  has_many :favorites, dependent: :destroy
+  has_many :like_posts, through: :favorites, source: :post, dependent: :destroy
   
   def follow(other_user)
     unless self == other_user

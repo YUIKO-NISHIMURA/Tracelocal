@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_30_122227) do
+ActiveRecord::Schema.define(version: 2021_10_01_070643) do
 
   create_table "favorites", charset: "utf8mb4", force: :cascade do |t|
     t.bigint "user_id", null: false
@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 2021_09_30_122227) do
   end
 
   create_table "images", charset: "utf8mb4", force: :cascade do |t|
-    t.string "image_url"
+    t.string "image_url", null: false
     t.bigint "post_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
