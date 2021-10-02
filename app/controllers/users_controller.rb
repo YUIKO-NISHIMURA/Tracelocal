@@ -19,12 +19,29 @@ class UsersController < ApplicationController
       render :new
     end 
   end
-
+  
+  def edit 
+    @user = User.find(params[:id])
+  end
+  
+  def update
+    @user = User.find(params[:id])
+    if @user.update(user_params)
+      flash[:success] = "Update success"
+      redirect_to user_url(@user)
+    else 
+      flash[:danger] = "Update lose"
+      render :edit
+    end
+  end
+  
+  
   def destroy
     
   end
   
   def followings
+    @user = current_user
     @pagy, @followings = pagy(@user.followings)
   end
 

@@ -1,5 +1,7 @@
 <h1 class="text-center">Followings</h1>
 
-
-<%= render "users", users: @followings %>
-
+<% if @followings.any? %>
+ <%= render "users", users: @followings %>
+<% else %>
+ <p class="text-center pt-4">No Followings. <%= link_to "Let's find someone!", root_url, class:"text-decoration-none" %></p>
+<% end %>

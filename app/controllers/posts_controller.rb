@@ -29,6 +29,7 @@ class PostsController < ApplicationController
     
     
   end 
+  
   def update
     if @post.update(post_params)
       flash[:success] = "Post success"
@@ -38,6 +39,7 @@ class PostsController < ApplicationController
       render :edit
     end
   end
+
   
   def destroy
     @post.destroy

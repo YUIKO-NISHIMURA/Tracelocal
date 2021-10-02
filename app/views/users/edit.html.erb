@@ -1,5 +1,5 @@
 <div class="text-center">
-  <h1>Sign up</h1>
+  <h1>Edit your information</h1>
 </div>
 
 <div class="row">
@@ -20,7 +20,7 @@
       </div>
       <div class="mb-3">
         <%= f.label :city, "City" %>
-        <%= f.text_field :city, class: "form-control" %>
+        <%= f.select :city, class: "form-control" %>
       </div>
       <div class="mb-3">
         <%= f.label :password, "Password" %>
@@ -30,10 +30,9 @@
         <%= f.label :password_confirmation, "Password Confirmation" %>
         <%= f.password_field :password_confirmation, class: "form-control" %>
       </div class="mb-3">
-      <%= f.submit "Signup", class:"btn btn-primary w-100" %>
+      <%= f.submit "Edit", class:"btn btn-primary w-100" %>
       </div>
     <% end %>
 
   </div>
 </div>
-
