@@ -13,7 +13,7 @@
         <div class="card-body border-top">
           <div class="row">
             <div class="col-sm-4">
-              <img class="rounded me-2 mb-5" src="<%= gravatar_url(post.user, {size: 100} ) %>" alt="">
+              <img class="rounded me-2 mb-5" src="<%= gravatar_url(post.user, {size: 100} ) %>" alt="post_images">
             </div>
             <div class="col-sm-8">
               <p class="card-text">Name:<%= link_to post.user.name, user_path(post.user), class: "text-decoration-none" %></p>
