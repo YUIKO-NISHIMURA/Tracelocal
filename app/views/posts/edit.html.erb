@@ -15,7 +15,7 @@
       </div>
       <div>
         <%= f.label :genre, "Genre" %>
-        <%= f.text_field :genre, class: "form-control" %>
+        <%= f.text_field :genre, options_for_select([['Japanese', "JPN"], ['Chinese', "CHI"], ['Korean', "KOR"], ['American', "US"], ['Italian', "ITL"], ['French', "FRE"], ['Others', "ELSE"]]), class: "form-control" %>
       </div>
       <div class="mb-3">
         <%= f.label :station, "Station" %>

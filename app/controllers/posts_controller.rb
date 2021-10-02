@@ -35,7 +35,7 @@ class PostsController < ApplicationController
       redirect_to user_url(current_user)
     else 
       flash[:danger] = "Post lose"
-      render :new
+      render :edit
     end
   end
   
