@@ -6,7 +6,7 @@
         <div class="card-img-top text-center">
           <% if post.images.any? %>
             <% post.images.each do |image| %>  
-              <%= image_tag image.image_url.url, :size =>'320x160' %> 
+              <%= image_tag image.image_url.url, :size =>'320x160', alt:"images" %> 
             <% end %>
           <% end %>
         </div>
