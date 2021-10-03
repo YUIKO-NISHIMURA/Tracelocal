@@ -25,8 +25,6 @@ class PostsController < ApplicationController
   end
   
   def edit 
-    
-    
   end 
   
   def update
@@ -54,7 +52,7 @@ class PostsController < ApplicationController
   
   private
     def post_params
-      params.require(:post).permit(:name, :genre, :comment, :station, :image)
+      params.require(:post).permit(:name, :genre, :comment, :station, :image, :image_cache, :remove_image)
     end
     
     def correct_user
