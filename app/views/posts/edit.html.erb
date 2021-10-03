@@ -9,11 +9,11 @@
     <%= form_with(model: @post) do |f| %>
         <%= render "layouts/error_message", model: f.object %>
       
-      <div>
+      <div class="mb-3">
         <%= f.label :name, "Name of place" %>
         <%= f.text_field :name, class: "form-control" %>
       </div>
-      <div>
+      <div class="mb-3">
         <%= f.label :genre, "Genre" %>
         <%= f.select :genre, options_for_select([['Japanese', "Japanese"], ['Chinese', "Chinese"], ['Korean', "Korean"], ['American', "American"], ['Italian', "Italian"], ['French', "French"], ['Others', "Others"]]), class: "form-control" %>
       </div>
@@ -22,17 +22,15 @@
         <%= f.text_field :station, class: "form-control" %>
       </div>
       <div class="mb-3">
-        <% if @post.images.any? %>
-          <% @post.images.each do |image| %>  
-            <%= image_tag image.image_url.url, :size =>'320x160' %> 
-          <% end %>
+        <% if @post.image? %>
+          <%= image_tag @post.image.url, width: '80%', height: '80%' %>
         <% end %>
-        
-        <%= f.fields_for :images do |i| %>
-          <%= i.file_field :image_url %>
-        <% end %>
+        <div class="mb-3">
+          <%= f.label :image, "Image" %>
+          <%= f.file_field :image %>
+        </div>
       </div>
-      <div>
+      <div class="mb-3">
         <%= f.label :comment, "Comment" %>
         <%= f.text_area :comment, class: "form-control" %>
       </div>

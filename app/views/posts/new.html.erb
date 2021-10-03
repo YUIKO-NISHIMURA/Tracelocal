@@ -22,9 +22,8 @@
           <%= f.text_field :station, class: "form-control" %>
         </div>
         <div class="mb-3">
-          <%= f.fields_for :images do |i| %>
-            <%= i.file_field :image_url %>
-          <% end %>
+          <%= f.label :image, "Image" %>
+          <%= f.file_field :image %>
         </div>
         <div class="mb-3">
           <%= f.label :comment, "Comment" %>

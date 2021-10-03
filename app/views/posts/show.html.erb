@@ -3,10 +3,8 @@
   <div class="row">
     <div class="card col-sm-5 offset-col-3 mx-auto">
       <div class="card-img-top text-center">
-        <% if @post.images.any? %>
-          <% @post.images.each do |image| %>  
-            <%= image_tag image.image_url.url, :size =>'320x160' %> 
-          <% end %>
+        <% if @post.image? %>
+          <%= image_tag @post.image.url, width: '80%', height: '80%' %>
         <% end %>
       </div>
       <div class="card-body border-top">

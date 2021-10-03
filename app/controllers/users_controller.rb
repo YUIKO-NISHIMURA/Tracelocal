@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :followings, :followers, :likes]
+  before_action :correct_user, only:[:edit, :update]
   
   def show
     @pagy, @posts = pagy(@user.posts)
@@ -62,5 +63,9 @@ private
     @user = User.find(params[:id])
   end 
   
+  def correct_user
+   @user = User.find(params[:id])
+   redirect_to root_url unless @user == current_user
+  end 
   
 end

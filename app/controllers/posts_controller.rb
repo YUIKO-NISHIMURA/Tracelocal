@@ -11,7 +11,6 @@ class PostsController < ApplicationController
   
   def new
     @post = current_user.posts.build
-    @post.images.build #写真投稿用
   end 
 
   def create
@@ -55,7 +54,7 @@ class PostsController < ApplicationController
   
   private
     def post_params
-      params.require(:post).permit(:name, :genre, :comment, :station, images_attributes: [:image_url] )
+      params.require(:post).permit(:name, :genre, :comment, :station, :image)
     end
     
     def correct_user
