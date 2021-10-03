@@ -11,8 +11,8 @@
             <img class="rounded me-2 mb-5 mt-4 " src="<%= gravatar_url(@user, {size: 100}) %>" alt="">
           </div>
           <div class="col-sm-9 mt-4">
-            <% if @post.user.birthday? %>
-              <p class="card-text">Age:<%= (DateTime.now.to_i - @post.user.birthday.to_i)  / (86400* 365) %>
+            <% if @user.birthday? %>
+              <p class="card-text">Age:<%= (DateTime.now.to_i - @user.birthday.to_i)  / (86400* 365) %>
               </p>
             <% else %>
               <p class="card-text">Age: None</p>
