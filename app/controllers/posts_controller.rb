@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   before_action :correct_user, only: [:edit, :update, :destroy]
+  before_action :require_user_logged_in, only: [:new]
   
   def index
     @posts = Post.all
@@ -19,20 +20,17 @@ class PostsController < ApplicationController
       flash[:success] = "Post success"
       redirect_to user_url(current_user)
     else 
-      flash[:danger] = "Post lose"
+      flash.now[:danger] = "Post lose"
       render :new
     end
   end
-  
-  def edit 
-  end 
   
   def update
     if @post.update(post_params)
       flash[:success] = "Post success"
       redirect_to user_url(current_user)
     else 
-      flash[:danger] = "Post lose"
+      flash.now[:danger] = "Post lose"
       render :edit
     end
   end
@@ -52,7 +50,7 @@ class PostsController < ApplicationController
   
   private
     def post_params
-      params.require(:post).permit(:name, :genre, :comment, :station, :image, :image_cache, :remove_image)
+      params.require(:post).permit(:name, :genre, :comment, :station, :image, :image_cache)
     end
     
     def correct_user

@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
       flash[:success] = "Login success"
       redirect_to followings_post_url(@user)
     else 
-      flash[:danger] = "Login lose"
+      flash.now[:danger] = "Login lose"
       render :new 
     end 
   end

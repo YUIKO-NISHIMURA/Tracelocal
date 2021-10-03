@@ -16,7 +16,7 @@ class UsersController < ApplicationController
       flash[:success] = "Signup success"
       redirect_to root_url
     else 
-      flash[:danger] = "signup lose"
+      flash.now[:danger] = "signup lose"
       render :new
     end 
   end
@@ -31,7 +31,7 @@ class UsersController < ApplicationController
       flash[:success] = "Update success"
       redirect_to user_url(@user)
     else 
-      flash[:danger] = "Update lose"
+      flash.now[:danger] = "Update lose"
       render :edit
     end
   end

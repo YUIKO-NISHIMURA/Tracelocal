@@ -12,7 +12,7 @@
         <p class="card-text">Genre：<%= @post.genre %></p>
         <p class="card-text">Station：<%= @post.station %></p>
         <p class="card-text">Created.at：<%= @post.created_at.to_s(:datetime_jp) %></p>
-        <p class="card-text">Comment:<%= @post.comment %></p>
+        <p class="card-text">Comment:<%= safe_join(@post.comment.split("\n"),tag(:br)) %></p>
         <% if logged_in? %> 
           <div class="ms-4 text-center">
             <%= render "favorites/favorite_button", post: @post %>
@@ -40,8 +40,12 @@
             <% end %>
           </div>
           <div class="col-sm-8 mt-4">
-            <p class="card-text">Age:<%= (DateTime.now.to_i - @post.user.birthday.to_i)  / (86400* 365) %>
-            </p>
+            <% if @post.user.birthday? %>
+              <p class="card-text">Age:<%= (DateTime.now.to_i - @post.user.birthday.to_i)  / (86400* 365) %>
+              </p>
+            <% else %>
+              <p class="card-text">Age: None</p>
+            <% end %>
             <p class="card-text">City:<%= @post.user.city %></p>
           </div>
         </div>
