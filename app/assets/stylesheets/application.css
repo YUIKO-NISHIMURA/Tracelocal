@@ -15,15 +15,9 @@
  */
 
 .navbar-brand {
-  margin-left: 10px;
   font-size: 30px;
-  text-align: left;
 }
 
-.airplane {
-  text-align: left; 
-}
 nav {
   font-family: 'Kaushan Script', cursive;
 }
-

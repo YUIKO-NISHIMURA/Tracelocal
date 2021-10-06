@@ -16,7 +16,7 @@
       </div>
       <div class="mb-3">
         <%= f.label :birthday, "Birthday" %>
-        <%= f.date_select :birthday, use_month_numbers: true, start_year: 1900, end_year: Time.now.year, prompt:"--", class:"main__box__bottom__content__group3__box__barthday__box from-control" %>
+        <%= f.date_select :birthday, use_month_numbers: true, start_year: 1900, end_year: Time.now.year - 1, prompt:"--", class:"main__box__bottom__content__group3__box__barthday__box from-control" %>
       </div>
       <div class="mb-3">
         <%= f.label :city, "City" %>
