@@ -28,7 +28,7 @@
 ーページネーション機能<br>
 
 ## 【関連のURL】<br>
-Github： https://github.com/YUIKO-NISHIMURA/Tracelocal<br>
+Heroku: https://travelocal.herokuapp.com/<br>
 
 ## 【ページ紹介】<br>
 #### ホーム画面
@@ -42,4 +42,4 @@ Github： https://github.com/YUIKO-NISHIMURA/Tracelocal<br>
 #### フォローしたユーザー、フォローされているユーザーが一覧で見れます。
 ![home](app/assets/images/travelocal5.png)
 #### お気に入りに追加した投稿が一覧で見れます。
-![home](app/assets/images/travelocal９.png)
+![home](app/assets/images/travelocal9.png)
