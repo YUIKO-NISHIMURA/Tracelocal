@@ -48,6 +48,7 @@ class PostsController < ApplicationController
     @pagy,@posts = pagy(current_user.feed_posts.order(id: :desc))
   end   
   
+  
   private
     def post_params
       params.require(:post).permit(:name, :genre, :comment, :station, :image, :image_cache)
@@ -59,5 +60,6 @@ class PostsController < ApplicationController
         redirect_to root_url
       end 
     end 
+    
 
 end
