@@ -1,24 +1,35 @@
 # README
+## 【サービスの概要】<br>
+名前：Travelocal<br>
+概要：”暮らすように旅する”をコンセプトに、地元の人が普段行くお店・場所を旅人に伝えるサイトです。<br>
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## 【サービスにかける思いや工夫したところ】<br>
+### （思い）<br>
+旅行の際の、「地元の人と繋がる事の楽しさ」、「知らない文化に触れる事の楽しさ」をより多くの人に味わってほしいと思い、このサイトを作りました。<br>
+私が、学生時代に約２０カ国を旅する中で、ガイドブックには載っていないような、地元の人が普段から行くお店や場所で、そういった楽しさを味わうことができ、<br>
+それは私の旅の中でかけがえのない思い出となっているためです。<br>
+そのため、地元の人が普段から行くお店や場所を投稿して、旅人に伝えられるサイトを作りました。<br>
+### 工夫したところ）<br>
+年齢入力欄を作りました。それは、「自分と同じ世代の人が行くお店・場所」はその国の文化を知る上でとても興味深いものとなると考えたためです。<br>
 
-Things you may want to cover:
+## 【使用した技術】<br>
+・Ruby on Rails <br>
+・Bootstrap<br>
+・MySQL<br>
+・PostgreSQL<br>
+・git/GitHub<br>
+・Heroku<br>
+・Carrierwave<br>
+ーユーザー登録／ログイン機能<br>
+ーCRUD<br>
+ーフォロー機能<br>
+ーお気に入り機能<br>
+ー画像投稿機能<br>
+ーページネーション機能<br>
 
-* Ruby version
+## 【関連のURL】<br>
+Github： https://github.com/YUIKO-NISHIMURA/Tracelocal<br>
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## 【ページ紹介】<br>
+### ホーム画面
+![home](app/assets/images/travellocal1.jpg)
