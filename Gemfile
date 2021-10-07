@@ -50,8 +50,11 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem "pagy"
 
 gem "carrierwave", '~> 1.3', '>= 1.3.1'
+gem 'mini_magick'
 gem "cloudinary"
 
 group :production do
   gem 'pg', '>= 0.18', '< 2.0'
 end
+
+gem "ransack"
