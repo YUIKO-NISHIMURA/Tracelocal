@@ -31,5 +31,15 @@
 Github： https://github.com/YUIKO-NISHIMURA/Tracelocal<br>
 
 ## 【ページ紹介】<br>
-### ホーム画面
-![home](app/assets/images/travellocal1.jpg)
+#### ホーム画面
+![home](app/assets/images/travelocal1.jpg)
+#### ログインなしで全ての投稿が見れるようになっています。
+![home](app/assets/images/travelocal7.png)
+#### ログイン後はフォローしたユーザの投稿が一覧で見れます。
+![home](app/assets/images/travelocal8.png)
+#### ログインしたユーザーが、新規投稿できるようになっています。
+![home](app/assets/images/travelocal4.png)
+#### フォローしたユーザー、フォローされているユーザーが一覧で見れます。
+![home](app/assets/images/travelocal5.png)
+#### お気に入りに追加した投稿が一覧で見れます。
+![home](app/assets/images/travelocal９.png)
